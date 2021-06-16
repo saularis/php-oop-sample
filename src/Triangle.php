@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Exception;
+
 class Triangle implements Shape
 {
     protected float|int $height;
