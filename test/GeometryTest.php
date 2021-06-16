@@ -46,8 +46,10 @@ class GeometryTest extends TestCase
             [new Square(10), 10*10],
             // triangle without angle
             [new Triangle(10, 20), 0.5 * 10 * 20],
-            // triangle with angle
+            // triangle with angle (degree)
             [new Triangle(10, 20, 90), 0.5 * 10 * 20 * sin(deg2rad(90))],
+            // triangle with angle (radian)
+            [new Triangle(10, 20, 90, 'radian'), 0.5 * 10 * 20 * sin(90)],
         ];
     }
 }
