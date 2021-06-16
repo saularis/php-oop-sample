@@ -4,6 +4,6 @@ namespace App;
 
 interface Shape
 {
-    public function area();
-    public function perimeter();
+    public function area(): float|int;
+    public function perimeter(): float|int;
 }

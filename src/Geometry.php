@@ -11,12 +11,12 @@ class Geometry
         $this->shape = $shape;
     }
 
-    public function area()
+    public function area(): float|int
     {
         return $this->shape->area();
     }
 
-    public function perimeter()
+    public function perimeter(): float|int
     {
         return $this->shape->perimeter();
     }

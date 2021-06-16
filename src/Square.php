@@ -4,20 +4,20 @@ namespace App;
 
 class Square implements Shape
 {
-    protected $width;
+    protected $lenght;
 
-    public function __construct($width)
+    public function __construct(float|int $lenght)
     {
-        $this->width = $width;
+        $this->lenght = $lenght;
     }
 
-    public function area()
+    public function area(): float|int
     {
-        return $this->width * $this->width;
+        return $this->lenght * $this->lenght;
     }
 
-    public function perimeter()
+    public function perimeter(): float|int
     {
-        return $this->width * 4;
+        return $this->lenght * 4;
     }
 }
