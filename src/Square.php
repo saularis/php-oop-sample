@@ -4,7 +4,7 @@ namespace App;
 
 class Square implements Shape
 {
-    protected $lenght;
+    protected float|int $lenght;
 
     public function __construct(float|int $lenght)
     {

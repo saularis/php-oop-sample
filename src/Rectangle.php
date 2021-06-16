@@ -4,8 +4,8 @@ namespace App;
 
 class Rectangle implements Shape
 {
-    protected $height;
-    protected $width;
+    protected float|int $height;
+    protected float|int $width;
 
     public function __construct(float|int $height, float|int $width)
     {

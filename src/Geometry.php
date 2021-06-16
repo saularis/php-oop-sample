@@ -4,7 +4,7 @@ namespace App;
 
 class Geometry
 {
-    protected $shape;
+    protected Shape $shape;
 
     public function __construct(Shape $shape)
     {

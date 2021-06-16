@@ -4,10 +4,10 @@ namespace App;
 
 class Triangle implements Shape
 {
-    protected $height;
-    protected $width;
-    protected $angle;
-    protected $angleUnit;
+    protected float|int $height;
+    protected float|int $width;
+    protected float|int $angle;
+    protected string $angleUnit;
 
     public function __construct(
         float|int $height,
