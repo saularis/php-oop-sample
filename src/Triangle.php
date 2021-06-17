@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Exception;
+use App\TriangleException;
 
 class Triangle implements Shape
 {
@@ -28,7 +28,7 @@ class Triangle implements Shape
         return 0.5 * $this->height * $this->width * $this->angle();
     }
 
-    public function perimeter(): float | int
+    public function perimeter(): float|int
     {
         return sqrt(($this->height * $this->height) + ($this->width * $this->width)) + $this->width + $this->height;
     }
@@ -43,7 +43,7 @@ class Triangle implements Shape
                 return sin($this->angle);
                 break;
             default:
-                throw new Exception("Unknow angle unit", 1);
+                throw new TriangleException("Unknow angle unit");
                 break;
         }
     }
