@@ -2,10 +2,12 @@
 
 namespace App;
 
-use App\TriangleException;
+use App\PolygonTrait;
 
 class Triangle implements Shape
 {
+    use PolygonTrait;
+
     protected float|int $height;
     protected float|int $width;
     protected float|int $angle;
@@ -21,6 +23,10 @@ class Triangle implements Shape
         $this->width = $width;
         $this->angle = $angle;
         $this->angleUnit = $angleUnit;
+        $this->numberIsValid($this->height);
+        $this->numberIsValid($this->width);
+        $this->numberIsValid($this->angle);
+        $this->angleUnitIsValid($this->angleUnit);
     }
 
     public function area(): float|int
@@ -36,14 +42,11 @@ class Triangle implements Shape
     private function angle()
     {
         switch ($this->angleUnit) {
-            case 'degree':
-                return sin(deg2rad($this->angle));
-                break;
             case 'radian':
                 return sin($this->angle);
                 break;
             default:
-                throw new TriangleException("Unknow angle unit");
+                return sin(deg2rad($this->angle));
                 break;
         }
     }

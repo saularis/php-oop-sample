@@ -2,22 +2,27 @@
 
 namespace App;
 
+use App\PolygonTrait;
+
 class Square implements Shape
 {
-    protected float|int $lenght;
+    use PolygonTrait;
 
-    public function __construct(float|int $lenght)
+    protected float|int $length;
+
+    public function __construct(float|int $length)
     {
-        $this->lenght = $lenght;
+        $this->length = $length;
+        $this->numberIsValid($this->length);
     }
 
     public function area(): float|int
     {
-        return $this->lenght * $this->lenght;
+        return $this->length * $this->length;
     }
 
     public function perimeter(): float|int
     {
-        return $this->lenght * 4;
+        return $this->length * 4;
     }
 }

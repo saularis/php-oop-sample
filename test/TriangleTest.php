@@ -2,6 +2,7 @@
 
 namespace Test;
 
+use App\GeometryException;
 use PHPUnit\Framework\TestCase;
 use App\Triangle;
 
@@ -22,5 +23,31 @@ class TriangleTest extends TestCase
             $triangle->perimeter(),
             sqrt((10 * 10) + (30 * 30)) + 30 + 10
         );
+    }
+
+    /**
+     *
+     * @test
+     * @dataProvider invalidTriangleDataProvider
+     * */
+    public function it_throws_exception_for_invalid_input($height, $width, $angle, $angleUnit)
+    {
+        $this->expectException(GeometryException::class);
+        $triangle = new Triangle($height, $width, $angle, $angleUnit);
+        $triangle->area();
+    }
+
+    public function invalidTriangleDataProvider()
+    {
+        return [
+            [0, 0, 90, 'degree'],
+            [-10, 20, 90, 'degree'],
+            [10, -20, 90, 'degree'],
+            [0, 20, 90, 'degree'],
+            [10, 0, 90, 'degree'],
+            [10, 20, -90, 'degree'],
+            [10, 20, 0, 'degree'],
+            [10, 20, 90, 'wrong_input'],
+        ];
     }
 }

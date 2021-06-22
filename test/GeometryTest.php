@@ -2,11 +2,10 @@
 
 namespace Test;
 
-use App\Geometry;
-use App\Rectangle;
 use App\Square;
+use App\Geometry;
 use App\Triangle;
-use App\TriangleException;
+use App\Rectangle;
 use PHPUnit\Framework\TestCase;
 
 class GeometryTest extends TestCase
@@ -52,15 +51,5 @@ class GeometryTest extends TestCase
             // triangle with angle (radian)
             [new Triangle(10, 20, 90, 'radian'), 0.5 * 10 * 20 * sin(90)],
         ];
-    }
-
-    /** @test */
-    public function it_throws_exception_when_angle_unit_is_wrong()
-    {
-        $this->expectException(TriangleException::class);
-        $geometry = new Geometry(
-            new Triangle(10, 20, 90, 'wrong_input')
-        );
-        $geometry->area();
     }
 }

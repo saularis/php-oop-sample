@@ -2,8 +2,12 @@
 
 namespace App;
 
+use App\PolygonTrait;
+
 class Rectangle implements Shape
 {
+    use PolygonTrait;
+
     protected float|int $height;
     protected float|int $width;
 
@@ -11,6 +15,8 @@ class Rectangle implements Shape
     {
         $this->height = $height;
         $this->width = $width;
+        $this->numberIsValid($height);
+        $this->numberIsValid($width);
     }
 
     public function area(): float|int
