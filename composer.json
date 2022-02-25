@@ -1,6 +1,6 @@
 {
-    "name": "peeko/test",
-    "description": "pfizer test",
+    "name": "saularis/php-oop-sample",
+    "description": "PHP oop sample",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -11,7 +11,7 @@
     "authors": [
         {
             "name": "Abdulla Malik",
-            "email": "abdulla.coder@gmail.com"
+            "email": "hi@abdulla.dev"
         }
     ],
     "require": {
